@@ -1,9 +1,91 @@
 @import "tailwindcss";
 
-@theme {
-  --font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+@theme { --font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+:root {
+  --ink: #1f2933;
+  --muted: #65717c;
+  --rule: #dce2e5;
+  --paper: #fcfcfa;
+  --soft: #f3f6f5;
+  --accent: #0f766e;
+  --accent-dark: #0b5f59;
 }
 
-html {
-  background: #0c0a09;
+* { box-sizing: border-box; }
+html { background: var(--paper); scroll-behavior: smooth; }
+body { min-width: 320px; margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font-sans); font-size: 16px; line-height: 1.55; }
+a { color: inherit; }
+a:focus-visible { border-radius: 2px; outline: 3px solid #f4b942; outline-offset: 4px; }
+
+.skip-link { position: fixed; z-index: 10; top: 1rem; left: 1rem; padding: .65rem 1rem; background: var(--ink); color: white; text-decoration: none; transform: translateY(-200%); }
+.skip-link:focus { transform: translateY(0); }
+
+.site-header, footer { display: flex; align-items: center; justify-content: space-between; width: min(100% - 3rem, 1220px); margin: 0 auto; }
+.site-header { min-height: 84px; gap: 2rem; border-bottom: 1px solid var(--rule); }
+.wordmark { color: var(--ink); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .78rem; font-weight: 700; letter-spacing: .05em; text-decoration: none; white-space: nowrap; }
+nav, .header-links, footer div { display: flex; align-items: center; gap: 1.4rem; }
+nav a, .header-links a, footer a { color: var(--muted); font-size: .88rem; text-decoration: none; }
+nav a:hover, .header-links a:hover, footer a:hover { color: var(--accent); }
+.header-links a { display: inline-flex; align-items: center; }
+.arrow-icon { display: inline-block; width: .9rem; height: .9rem; margin-left: .15rem; vertical-align: -.08em; }
+
+.section-shell, .contact-section { width: min(100% - 3rem, 1220px); margin: 0 auto; }
+.hero { max-width: 1220px; padding: clamp(7rem, 14vw, 12rem) 0 clamp(6.5rem, 12vw, 10rem); }
+.eyebrow, .section-label p, .experience-meta p:first-child { margin: 0; color: var(--accent); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+h1, h2, h3, p { margin-top: 0; }
+h1 { max-width: 980px; margin: .9rem 0 1.6rem; font-size: clamp(3.25rem, 7.6vw, 7.35rem); font-weight: 500; letter-spacing: -.065em; line-height: .94; }
+.hero-copy { max-width: 610px; margin-bottom: 2rem; color: var(--muted); font-size: clamp(1.1rem, 1.5vw, 1.3rem); line-height: 1.65; }
+.button { display: inline-flex; gap: .5rem; align-items: center; padding: .8rem 1rem; border: 1px solid var(--ink); color: var(--ink); font-size: .92rem; font-weight: 600; text-decoration: none; transition: background .18s ease, color .18s ease; }
+.button:hover { background: var(--ink); color: white; }
+
+.section-grid { display: grid; grid-template-columns: minmax(160px, .62fr) minmax(0, 2fr); gap: clamp(2rem, 7vw, 8rem); padding: clamp(4.5rem, 8vw, 7.5rem) 0; border-top: 1px solid var(--rule); }
+.section-label h2 { max-width: 150px; margin: .45rem 0 0; font-size: 1.05rem; font-weight: 600; letter-spacing: -.02em; line-height: 1.15; }
+.section-content { min-width: 0; }
+.large-copy { max-width: 760px; margin-bottom: 1.6rem; font-size: clamp(1.75rem, 3.1vw, 2.75rem); font-weight: 400; letter-spacing: -.045em; line-height: 1.12; }
+.intro-copy > p:not(.large-copy), .background-copy p { max-width: 670px; margin-bottom: 0; color: var(--muted); font-size: 1.03rem; }
+
+.experience-list { border-top: 1px solid var(--rule); }
+.experience-card { display: grid; grid-template-columns: minmax(145px, .7fr) minmax(0, 2fr); gap: 2rem; padding: 2rem 0; border-bottom: 1px solid var(--rule); }
+.experience-meta p { margin-bottom: .2rem; color: var(--muted); font-size: .84rem; }
+.experience-meta p:first-child { margin-bottom: .45rem; }
+.experience-meta span, .experience-card h3 span { color: var(--muted); font-weight: 400; }
+.experience-card h3, .toolkit-grid h3 { margin-bottom: .65rem; font-size: 1.08rem; font-weight: 650; letter-spacing: -.025em; line-height: 1.25; }
+.experience-card > div > p { margin-bottom: .9rem; color: var(--muted); }
+ul { margin: 0; padding: 0; list-style: none; }
+.experience-card li { position: relative; margin-top: .55rem; padding-left: 1rem; color: var(--muted); font-size: .94rem; }
+.experience-card li::before { position: absolute; left: 0; color: var(--accent); content: "—"; }
+
+.toolkit-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.toolkit-grid > div { min-height: 175px; padding: 1.45rem; background: var(--soft); }
+.toolkit-grid h3 { color: var(--accent-dark); }
+.toolkit-grid p { margin: 0; color: var(--muted); font-size: .95rem; line-height: 1.65; }
+.background-section { padding-bottom: clamp(5.5rem, 10vw, 9rem); }
+
+.contact-section { margin-bottom: 2.5rem; padding: clamp(4rem, 8vw, 7rem) clamp(1.7rem, 5vw, 5rem); background: var(--ink); color: white; }
+.contact-section .eyebrow { color: #83d4c9; }
+.contact-section h2 { max-width: 700px; margin: 1rem 0; font-size: clamp(2.4rem, 5.3vw, 5.25rem); font-weight: 500; letter-spacing: -.06em; line-height: .98; }
+.contact-section > p:not(.eyebrow) { margin-bottom: 2.25rem; color: #c9d1d5; font-size: 1.05rem; }
+.contact-link { display: inline-flex; align-items: center; gap: .25rem; color: white; font-size: 1.02rem; font-weight: 600; text-decoration-color: #83d4c9; text-decoration-thickness: 2px; text-underline-offset: .32rem; }
+.contact-link:hover { color: #83d4c9; }
+
+footer { min-height: 105px; color: var(--muted); font-size: .78rem; }
+footer p { margin: 0; }
+
+@media (max-width: 720px) {
+  .site-header { min-height: auto; padding: 1.2rem 0; flex-wrap: wrap; gap: 1rem; }
+  nav { order: 3; width: 100%; justify-content: space-between; }
+  .header-links { margin-left: auto; gap: .85rem; }
+  .section-grid, .experience-card { grid-template-columns: 1fr; gap: 1.6rem; }
+  .section-label { display: flex; gap: 1rem; align-items: baseline; }
+  .section-label h2 { max-width: none; margin: 0; }
+  .toolkit-grid { grid-template-columns: 1fr; }
+  .toolkit-grid > div { min-height: auto; }
+}
+
+@media (max-width: 430px) {
+  .site-header, .section-shell, .contact-section, footer { width: min(100% - 2rem, 1220px); }
+  .header-links { display: none; }
+  h1 { font-size: clamp(3rem, 15vw, 4.4rem); }
+  footer { align-items: flex-start; flex-direction: column; justify-content: center; gap: .8rem; }
 }
