@@ -14,10 +14,15 @@ function ArrowUpRight() {
 }
 
 function ExternalLink({ href, children }: { href: string; children: string }) {
+  return <a href={href} target="_blank" rel="noreferrer">{children} <ArrowUpRight /></a>
+}
+
+function SectionHeading({ number, title }: { number: string; title: string }) {
   return (
-    <a href={href} target="_blank" rel="noreferrer">
-      {children} <ArrowUpRight />
-    </a>
+    <div className="section-heading">
+      <p>{number}</p>
+      <h2>{title}</h2>
+    </div>
   )
 }
 
@@ -29,85 +34,104 @@ function App() {
       <header className="site-header">
         <a className="wordmark" href="#top" aria-label="Matt Greathouse, back to top">mattgreat.house</a>
         <nav aria-label="Primary navigation">
-          <a href="#about">About</a>
+          <a href="#overview">Overview</a>
           <a href="#experience">Experience</a>
+          <a href="#skills">Skills</a>
+          <a href="#background">Background</a>
           <a href="#contact">Contact</a>
         </nav>
-        <div className="header-links" aria-label="Social links">
-          <ExternalLink href={githubUrl}>GitHub</ExternalLink>
-          <ExternalLink href={linkedInUrl}>LinkedIn</ExternalLink>
-        </div>
+        <ExternalLink href={githubUrl}>GitHub</ExternalLink>
       </header>
 
       <main id="content">
-        <section className="hero section-shell" id="top" aria-labelledby="hero-title">
-          <p className="eyebrow">Senior software engineer · Building useful things</p>
-          <h1 id="hero-title">I turn ambitious software into products people can use.</h1>
-          <p className="hero-copy">I&apos;m Matt Greathouse, a founding senior engineer who works across the full stack—from product ideas and AI agents to reliable systems in production.</p>
-          <a className="button" href="#experience">See my work <span aria-hidden="true">↓</span></a>
-        </section>
-
-        <section className="section-shell section-grid" id="about" aria-labelledby="about-title">
-          <div className="section-label"><p>01</p><h2 id="about-title">About</h2></div>
-          <div className="section-content intro-copy">
-            <p className="large-copy">I enjoy taking complex problems from a rough idea to something clear, capable, and dependable.</p>
-            <p>Most recently, I&apos;ve helped take an AI agent platform from its earliest stage to paying customers. I&apos;m comfortable owning a problem end to end, and I value the close collaboration it takes to make good software.</p>
+        <section className="hero page-shell" id="top" aria-labelledby="hero-title">
+          <p className="kicker">Matt Greathouse · Senior software engineer</p>
+          <h1 id="hero-title">Founding senior engineer building AI-enabled products that ship and last.</h1>
+          <p className="hero-copy">I help teams turn complex product ideas into reliable software—from AI agent workflows and customer-facing features to the systems that keep them running.</p>
+          <div className="hero-actions">
+            <a className="button button-primary" href="#experience">View experience <span aria-hidden="true">↓</span></a>
+            <a className="button button-secondary" href={linkedInUrl} target="_blank" rel="noreferrer">Connect on LinkedIn <ArrowUpRight /></a>
           </div>
         </section>
 
-        <section className="section-shell section-grid" id="experience" aria-labelledby="experience-title">
-          <div className="section-label"><p>02</p><h2 id="experience-title">Selected experience</h2></div>
-          <div className="section-content experience-list">
-            <article className="experience-card">
-              <div className="experience-meta"><p>2025 — Present</p><p>Gobii</p></div>
-              <div>
-                <h3>Senior Software Engineer <span>(Founding Engineer)</span></h3>
-                <p>Building a production AI system that uses LLM orchestration, tool calling, MCP, and browser automation to streamline complex work.</p>
-                <ul>
-                  <li>Worked across product, customer support, incidents, and reliability as the company&apos;s second hire.</li>
-                  <li>Operated the platform across Kubernetes, GCP, Postgres, agent memory, billing, and observability.</li>
-                  <li>Built an evaluation suite to make non-deterministic agent workflows more consistent.</li>
-                </ul>
-              </div>
-            </article>
-            <article className="experience-card">
-              <div className="experience-meta"><p>2018 — 2025</p><p>Yakabod <span>/ now Everfox</span></p></div>
-              <div>
-                <h3>Senior Software Engineer</h3>
-                <p>Technical lead across multiple projects, pairing system architecture with hands-on execution and clear technical direction.</p>
-                <ul>
-                  <li>Delivered enterprise single sign-on with SAML and OIDC via Keycloak.</li>
-                  <li>Modernized a legacy JavaScript and React stack to TypeScript with a new build process.</li>
-                  <li>Developed an extensible React dashboard framework with customizable layouts and reusable component properties.</li>
-                </ul>
-              </div>
-            </article>
+        <section className="page-shell section" id="overview" aria-labelledby="overview-title">
+          <SectionHeading number="01" title="Professional overview" />
+          <div className="section-content">
+            <p className="section-lede" id="overview-title">A product-minded engineer who can own the work from an early concept through a dependable release.</p>
+            <p className="section-copy">At Gobii, I&apos;ve helped take an AI agent platform from its early stage to paying customers. I work best where thoughtful engineering, clear communication, and a practical bias toward shipping all matter.</p>
+            <ul className="strength-list" aria-label="Core strengths">
+              <li><strong>Full-stack delivery</strong><span>Turn product direction into well-built, customer-facing software.</span></li>
+              <li><strong>AI agent systems</strong><span>Build and evaluate LLM-powered workflows that behave reliably in production.</span></li>
+              <li><strong>Technical leadership</strong><span>Shape architecture, guide execution, and make complex work easier for teams to deliver.</span></li>
+            </ul>
           </div>
         </section>
 
-        <section className="section-shell section-grid" aria-labelledby="toolkit-title">
-          <div className="section-label"><p>03</p><h2 id="toolkit-title">Toolkit</h2></div>
-          <div className="section-content toolkit-grid">
-            <div><h3>Build</h3><p>Python · TypeScript · React · Node.js · PHP · MySQL · HTML &amp; CSS</p></div>
-            <div><h3>Ship &amp; operate</h3><p>Docker · Kubernetes · GCP · Firebase · Git · GitHub · GitLab</p></div>
-            <div><h3>AI &amp; systems</h3><p>Codex · Claude Code · LLM orchestration · MCP · OAuth · SAML · Keycloak</p></div>
+        <section className="page-shell section" id="experience" aria-labelledby="experience-title">
+          <SectionHeading number="02" title="Experience" />
+          <div className="section-content">
+            <p className="section-intro" id="experience-title">Roles where I&apos;ve combined product ownership with hands-on engineering.</p>
+            <div className="experience-list">
+              <article className="experience-card">
+                <div className="experience-meta"><p>2025 — Present</p><p>Gobii</p></div>
+                <div className="experience-details">
+                  <h3>Senior Software Engineer <span>(Founding Engineer)</span></h3>
+                  <p>Building and operating a production AI agent platform that helps streamline complex work.</p>
+                  <ul>
+                    <li>Shipped LLM orchestration, tool-calling, MCP, and browser-automation capabilities from early product stages through use by paying customers.</li>
+                    <li>Owned work across the stack: Kubernetes on GCP, Postgres and Neon, agent memory, Stripe billing, and observability.</li>
+                    <li>Maintained an evaluation suite to keep outputs more consistent across non-deterministic workflows.</li>
+                  </ul>
+                </div>
+              </article>
+              <article className="experience-card">
+                <div className="experience-meta"><p>2018 — 2025</p><p>Yakabod <span>/ now Everfox</span></p></div>
+                <div className="experience-details">
+                  <h3>Senior Software Engineer</h3>
+                  <p>Led technical work across multiple projects, pairing system design with hands-on implementation.</p>
+                  <ul>
+                    <li>Designed system architecture, documented plans, and coordinated development work as a technical lead.</li>
+                    <li>Delivered enterprise single sign-on with SAML and OIDC support through Keycloak.</li>
+                    <li>Modernized a JavaScript and React stack to TypeScript and built an extensible dashboard framework.</li>
+                  </ul>
+                </div>
+              </article>
+            </div>
           </div>
         </section>
 
-        <section className="section-shell section-grid background-section" aria-labelledby="background-title">
-          <div className="section-label"><p>04</p><h2 id="background-title">A little more</h2></div>
-          <div className="section-content background-copy"><p>I earned a degree in Computer Information Systems from Grove City College. I&apos;ve also built and maintained websites as a freelance developer since 2014, and enjoy serving in group leadership and childcare at church.</p></div>
+        <section className="page-shell section" id="skills" aria-labelledby="skills-title">
+          <SectionHeading number="03" title="Skills and tools" />
+          <div className="section-content">
+            <p className="section-intro" id="skills-title">A focused toolkit for building, shipping, and supporting modern software products.</p>
+            <div className="skill-groups">
+              <section><h3>Build</h3><p>Python · TypeScript · React · Node.js · PHP · MySQL · HTML · CSS</p></section>
+              <section><h3>Ship and operate</h3><p>Docker · Kubernetes · GCP · Firebase · Git · GitHub · GitLab</p></section>
+              <section><h3>AI and identity</h3><p>Codex · Claude Code · LLM orchestration · MCP · OAuth · SAML · Keycloak</p></section>
+            </div>
+          </div>
         </section>
 
-        <section className="contact-section" id="contact" aria-labelledby="contact-title">
-          <p className="eyebrow">Get in touch</p>
-          <h2 id="contact-title">Have something interesting in mind?</h2>
-          <p>I&apos;m always glad to connect with thoughtful people doing meaningful work.</p>
-          <a className="contact-link" href={linkedInUrl} target="_blank" rel="noreferrer">Message me on LinkedIn <ArrowUpRight /></a>
+        <section className="page-shell section background-section" id="background" aria-labelledby="background-title">
+          <SectionHeading number="04" title="Background" />
+          <div className="section-content background-content">
+            <p className="section-lede" id="background-title">A strong technical foundation, with years of practical web work alongside it.</p>
+            <div className="background-details">
+              <div><h3>Education</h3><p>Bachelor&apos;s degree in Computer Information Systems, Grove City College.</p></div>
+              <div><h3>Additional experience</h3><p>Freelance web developer and technical support since 2014, building and maintaining websites for clients.</p></div>
+            </div>
+          </div>
+        </section>
+
+        <section className="contact-section page-shell" id="contact" aria-labelledby="contact-title">
+          <p className="kicker">Contact</p>
+          <h2 id="contact-title">Looking for a senior engineer who can help move a product forward?</h2>
+          <p>Let&apos;s connect on LinkedIn.</p>
+          <a className="button button-light" href={linkedInUrl} target="_blank" rel="noreferrer">Connect on LinkedIn <ArrowUpRight /></a>
         </section>
       </main>
 
-      <footer>
+      <footer className="page-shell">
         <p>© {new Date().getFullYear()} Matt Greathouse</p>
         <div><ExternalLink href={githubUrl}>GitHub</ExternalLink><ExternalLink href={linkedInUrl}>LinkedIn</ExternalLink></div>
       </footer>
