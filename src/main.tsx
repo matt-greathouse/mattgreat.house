@@ -1,14 +1,44 @@
-import { StrictMode } from 'react'
+import { StrictMode, useEffect, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import './styles.css'
 
 const githubUrl = 'https://github.com/matt-greathouse'
 const linkedInUrl = 'https://www.linkedin.com/in/matt-greathouse-977aa6110/'
+const themeStorageKey = 'mattgreat.house-theme'
+
+type Theme = 'light' | 'dark'
+
+function getSystemTheme(): Theme {
+  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+}
+
+function getInitialTheme(): { theme: Theme; isManual: boolean } {
+  const savedTheme = window.localStorage.getItem(themeStorageKey)
+
+  if (savedTheme === 'light' || savedTheme === 'dark') {
+    return { theme: savedTheme, isManual: true }
+  }
+
+  return { theme: getSystemTheme(), isManual: false }
+}
 
 function ArrowUpRight() {
   return (
     <svg aria-hidden="true" className="arrow-icon" viewBox="0 0 16 16">
       <path d="M3 13 13 3M6 3h7v7" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
+    </svg>
+  )
+}
+
+function ThemeIcon({ theme }: { theme: Theme }) {
+  return theme === 'dark' ? (
+    <svg aria-hidden="true" className="theme-icon" viewBox="0 0 16 16">
+      <path d="M12.8 10.3A5.4 5.4 0 0 1 5.7 3.2 5.4 5.4 0 1 0 12.8 10.3Z" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.45" />
+    </svg>
+  ) : (
+    <svg aria-hidden="true" className="theme-icon" viewBox="0 0 16 16">
+      <circle cx="8" cy="8" r="3" fill="none" stroke="currentColor" strokeWidth="1.45" />
+      <path d="M8 1.5v1.4M8 13.1v1.4M1.5 8h1.4M13.1 8h1.4M3.4 3.4l1 1M11.6 11.6l1 1M12.6 3.4l-1 1M4.4 11.6l-1 1" fill="none" stroke="currentColor" strokeLinecap="round" strokeWidth="1.45" />
     </svg>
   )
 }
@@ -27,6 +57,31 @@ function SectionHeading({ number, title }: { number: string; title: string }) {
 }
 
 function App() {
+  const [themePreference, setThemePreference] = useState(getInitialTheme)
+  const theme = themePreference.theme
+  const nextTheme = theme === 'dark' ? 'light' : 'dark'
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme
+  }, [theme])
+
+  useEffect(() => {
+    if (themePreference.isManual) return
+
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+    const syncWithSystemTheme = (event: MediaQueryListEvent) => {
+      setThemePreference({ theme: event.matches ? 'dark' : 'light', isManual: false })
+    }
+
+    mediaQuery.addEventListener('change', syncWithSystemTheme)
+    return () => mediaQuery.removeEventListener('change', syncWithSystemTheme)
+  }, [themePreference.isManual])
+
+  function toggleTheme() {
+    setThemePreference({ theme: nextTheme, isManual: true })
+    window.localStorage.setItem(themeStorageKey, nextTheme)
+  }
+
   return (
     <>
       <a className="skip-link" href="#content">Skip to content</a>
@@ -40,7 +95,13 @@ function App() {
           <a href="#background">Background</a>
           <a href="#contact">Contact</a>
         </nav>
-        <ExternalLink href={githubUrl}>GitHub</ExternalLink>
+        <div className="header-actions">
+          <ExternalLink href={githubUrl}>GitHub</ExternalLink>
+          <button className="theme-toggle" type="button" aria-label={`Switch to ${nextTheme} mode`} aria-pressed={theme === 'dark'} onClick={toggleTheme}>
+            <ThemeIcon theme={theme} />
+            <span>{theme === 'dark' ? 'Dark' : 'Light'}</span>
+          </button>
+        </div>
       </header>
 
       <main id="content">
