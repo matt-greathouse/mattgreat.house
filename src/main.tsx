@@ -43,8 +43,8 @@ function ThemeIcon({ theme }: { theme: Theme }) {
   )
 }
 
-function ExternalLink({ href, children }: { href: string; children: string }) {
-  return <a href={href} target="_blank" rel="noreferrer">{children} <ArrowUpRight /></a>
+function ExternalLink({ href, children, className }: { href: string; children: string; className?: string }) {
+  return <a className={className} href={href} target="_blank" rel="noreferrer">{children} <ArrowUpRight /></a>
 }
 
 function SectionHeading({ number, title }: { number: string; title: string }) {
@@ -203,6 +203,19 @@ function App() {
             <div className="background-details">
               <div><h3>Education</h3><p>Bachelor&apos;s degree in Computer Information Systems, Grove City College.</p></div>
               <div><h3>Additional experience</h3><p>Freelance web developer and technical support since 2014, building and maintaining websites for clients.</p></div>
+            </div>
+          </div>
+        </section>
+
+        <section className="page-shell section recommendations-section" aria-label="Colleagues I recommend">
+          <SectionHeading number="05" title="Colleagues I recommend" />
+          <div className="section-content">
+            <div className="recommendation-card">
+              <div>
+                <h3>Will Bonde</h3>
+                <p>Engineer / builder</p>
+              </div>
+              <ExternalLink className="recommendation-link" href="https://willbonde.com/">Visit willbonde.com</ExternalLink>
             </div>
           </div>
         </section>
