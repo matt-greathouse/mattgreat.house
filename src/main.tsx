@@ -87,22 +87,44 @@ function App() {
       <a className="skip-link" href="#content">Skip to content</a>
 
       <header className="site-header">
-        <a className="wordmark" href="#top" aria-label="Matt Greathouse, back to top">mattgreat.house</a>
-        <nav aria-label="Primary navigation">
+        <div className="header-topline">
+          <a className="wordmark" href="#top" aria-label="Matt Greathouse, back to top">mattgreat.house</a>
+          <div className="header-actions">
+            <ExternalLink href={githubUrl}>GitHub</ExternalLink>
+            <a href="/plain.html">Plain version</a>
+            <button className="theme-toggle" type="button" aria-label={`Switch to ${nextTheme} mode`} aria-pressed={theme === 'dark'} onClick={toggleTheme}>
+              <ThemeIcon theme={theme} />
+              <span>{theme === 'dark' ? 'Dark' : 'Light'}</span>
+            </button>
+          </div>
+        </div>
+        <details className="mobile-menu">
+          <summary>
+            <span className="menu-label">Menu</span>
+            <span className="close-label">Close</span>
+            <span className="menu-icon" aria-hidden="true"><span /></span>
+          </summary>
+          <div className="mobile-menu-panel">
+            <nav aria-label="Mobile navigation">
+              <a href="#overview">Overview</a>
+              <a href="#experience">Experience</a>
+              <a href="#skills">Skills</a>
+              <a href="#background">Background</a>
+              <a href="#contact">Contact</a>
+            </nav>
+            <div className="mobile-menu-links">
+              <ExternalLink href={githubUrl}>GitHub</ExternalLink>
+              <a href="/plain.html">Plain version</a>
+            </div>
+          </div>
+        </details>
+        <nav className="desktop-navigation" aria-label="Primary navigation">
           <a href="#overview">Overview</a>
           <a href="#experience">Experience</a>
           <a href="#skills">Skills</a>
           <a href="#background">Background</a>
           <a href="#contact">Contact</a>
         </nav>
-        <div className="header-actions">
-          <ExternalLink href={githubUrl}>GitHub</ExternalLink>
-          <a href="/plain.html">Plain version</a>
-          <button className="theme-toggle" type="button" aria-label={`Switch to ${nextTheme} mode`} aria-pressed={theme === 'dark'} onClick={toggleTheme}>
-            <ThemeIcon theme={theme} />
-            <span>{theme === 'dark' ? 'Dark' : 'Light'}</span>
-          </button>
-        </div>
       </header>
 
       <main id="content">
