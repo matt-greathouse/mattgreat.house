@@ -130,7 +130,7 @@ function App() {
       <main id="content">
         <section className="hero page-shell" id="top" aria-labelledby="hero-title">
           <p className="kicker">Matt Greathouse · Senior software engineer</p>
-          <h1 id="hero-title">Founding senior engineer building AI-enabled products that ship and last.</h1>
+          <h1 id="hero-title">Senior engineer building AI-enabled products that ship and last.</h1>
           <p className="hero-copy">I help teams turn complex product ideas into reliable software—from AI agent workflows and customer-facing features to the systems that keep them running.</p>
           <div className="hero-actions">
             <a className="button button-primary" href="#experience">View experience <span aria-hidden="true">↓</span></a>
