@@ -214,6 +214,7 @@ footer div { display: flex; gap: 1.3rem; }
 
 @media (max-width: 520px) {
   .site-header { gap: .95rem; }
+  .header-actions { gap: .5rem; }
   nav { gap: .35rem; overflow-x: auto; padding-bottom: .15rem; justify-content: flex-start; }
   nav a { flex: 0 0 auto; padding: .2rem .3rem; }
   .header-actions > a { font-size: .78rem; }

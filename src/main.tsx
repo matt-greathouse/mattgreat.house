@@ -97,6 +97,7 @@ function App() {
         </nav>
         <div className="header-actions">
           <ExternalLink href={githubUrl}>GitHub</ExternalLink>
+          <a href="/plain.html">Plain version</a>
           <button className="theme-toggle" type="button" aria-label={`Switch to ${nextTheme} mode`} aria-pressed={theme === 'dark'} onClick={toggleTheme}>
             <ThemeIcon theme={theme} />
             <span>{theme === 'dark' ? 'Dark' : 'Light'}</span>
