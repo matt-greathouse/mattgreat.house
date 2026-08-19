@@ -8,10 +8,6 @@ const themeStorageKey = 'mattgreat.house-theme'
 
 type Theme = 'light' | 'dark'
 
-function getSystemTheme(): Theme {
-  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-}
-
 function getInitialTheme(): { theme: Theme; isManual: boolean } {
   const savedTheme = window.localStorage.getItem(themeStorageKey)
 
@@ -19,7 +15,7 @@ function getInitialTheme(): { theme: Theme; isManual: boolean } {
     return { theme: savedTheme, isManual: true }
   }
 
-  return { theme: getSystemTheme(), isManual: false }
+  return { theme: 'light', isManual: false }
 }
 
 function ArrowUpRight() {
