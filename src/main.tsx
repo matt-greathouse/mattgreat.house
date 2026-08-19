@@ -91,6 +91,7 @@ function App() {
           <a className="wordmark" href="#top" aria-label="Matt Greathouse, back to top">mattgreat.house</a>
           <div className="header-actions">
             <ExternalLink href={githubUrl}>GitHub</ExternalLink>
+            <a href="/resume/">Résumé</a>
             <a href="/plain.html">Plain version</a>
             <button className="theme-toggle" type="button" aria-label={`Switch to ${nextTheme} mode`} aria-pressed={theme === 'dark'} onClick={toggleTheme}>
               <ThemeIcon theme={theme} />
@@ -110,10 +111,12 @@ function App() {
               <a href="#experience">Experience</a>
               <a href="#skills">Skills</a>
               <a href="#background">Background</a>
+              <a href="/resume/">Résumé</a>
               <a href="#contact">Contact</a>
             </nav>
             <div className="mobile-menu-links">
               <ExternalLink href={githubUrl}>GitHub</ExternalLink>
+              <a href="/resume/">Résumé</a>
               <a href="/plain.html">Plain version</a>
             </div>
           </div>
@@ -134,6 +137,7 @@ function App() {
           <p className="hero-copy">I help teams turn complex product ideas into reliable software—from AI agent workflows and customer-facing features to the systems that keep them running.</p>
           <div className="hero-actions">
             <a className="button button-primary" href="#experience">View experience <span aria-hidden="true">↓</span></a>
+            <a className="button button-secondary" href="/matt-greathouse-resume.pdf" download>Download résumé (PDF) <span aria-hidden="true">↓</span></a>
             <a className="button button-secondary" href={linkedInUrl} target="_blank" rel="noreferrer">Connect on LinkedIn <ArrowUpRight /></a>
           </div>
         </section>

@@ -1,0 +1,12 @@
+# Matt Greathouse
+
+> The professional site and résumé of Matt Greathouse, a founding senior software engineer who builds AI agent systems and reliable full-stack products.
+
+Matt Greathouse works across product engineering, LLM orchestration, browser automation, Kubernetes, cloud infrastructure, identity, and customer-facing software. The résumé is the most complete source for experience, skills, education, and contact information.
+
+## Primary pages
+
+- [Homepage](https://mattgreat.house/): Professional profile and current overview.
+- [HTML résumé](https://mattgreat.house/resume/): Complete, indexable résumé with work history, skills, education, and contact information.
+- [PDF résumé](https://mattgreat.house/matt-greathouse-resume.pdf): Original downloadable résumé.
+- [Complete profile](https://mattgreat.house/llms-full.txt): Full machine-readable résumé and profile text.

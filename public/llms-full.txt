@@ -1,0 +1,49 @@
+# Matt Greathouse
+
+> Matt Greathouse is a founding senior software engineer who builds AI agent systems and reliable full-stack products.
+
+## Contact
+
+- Phone: (717) 408-8083
+- Email: matt@mattgreat.house
+- GitHub: https://github.com/matt-greathouse
+- LinkedIn: https://www.linkedin.com/in/matt-greathouse-977aa6110/
+- Website: https://mattgreat.house/
+
+## Summary
+
+Founding senior engineer with a passion for software development who helped guide an AI agent platform from early-stage to paying customers, shipping significant product features end-to-end. Self-directed and able to drive work to completion, while also thriving in close collaboration on a team.
+
+## Education
+
+- Bachelor's Degree in Computer Information Systems from Grove City College - Graduated in 2018.
+
+## Technical skills
+
+- Languages: Python, SQLite, Java, PHP, JavaScript, TypeScript, React, MySQL, HTML, CSS, and SCSS. Familiar with C#, Swift, SwiftUI, C++, C, ASP.NET, SQL Server, DirectX, and assembly.
+- Applications and technologies: Codex, Claude Code, LLM orchestration, API development, Docker, Node.js, Kubernetes, Firebase, Azure, Git, GitHub, GitLab, GCP, IntelliJ, SAML, OAuth, and Keycloak.
+
+## Experience
+
+### Gobii - Senior Software Engineer (Founding Engineer), August 2025 to Present
+
+- Developed and shipped a production AI agent platform that utilized LLM orchestration, tool calling, MCP, and browser automation to streamline complex processes, taking the platform from early-stage to production with paying customers in 12 months.
+- Operated the full stack: Kubernetes on GCP, Postgres/Neon, SQLite for agent memory, Stripe billing, and OpenTelemetry observability.
+- Second hire and founding engineer working across every layer of the stack while also running customer support, incidents, and reliability.
+- Shipped features at high velocity, using AI-assisted development paired with rigorous human review to maintain high quality.
+- Maintained an eval suite to keep agent outputs consistent across non-deterministic workflows.
+
+### Yakabod, Inc. (now Everfox, Inc.) - Senior Software Engineer, May 2018 to August 2025
+
+- Operated as a technical lead on multiple projects. Designed the system architecture, delegated tasks to other developers, wrote documentation, and executed on plans ahead of schedule.
+- Implemented an enterprise single sign-on feature, adding SAML and OIDC support via Keycloak to centralize and secure authentication across the platform.
+- Migrated legacy JavaScript and React stack to TypeScript, including a new build process for development and production applications.
+- Developed a large-scale React with TypeScript dashboard framework, implementing an extensible architecture for reusable component properties and customizable layout.
+- Led adoption for AI-assisted tooling across the development team.
+
+## Other experience and accomplishments
+
+- Internship - Highgear, Inc. - Learned React.js and TypeScript to refactor a web application to modern standards.
+- Internship - Global Data Consultants, LLC - Worked with an agile team to develop a project management application in .NET using C#, JavaScript, Backbone.js, and Microsoft SQL Server.
+- Freelance Web Developer & Technical Support since 2014, building and maintaining multiple websites.
+- Serves in group leadership and childcare at church.

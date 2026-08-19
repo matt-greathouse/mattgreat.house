@@ -50,6 +50,9 @@ p, li, dd { max-width: 68ch; }
 section > p:not(.eyebrow), article > p { color: var(--muted); }
 .hero > p:not(.eyebrow) { max-width: 62ch; font-size: 1.12rem; }
 .hero-links { display: flex; flex-wrap: wrap; gap: .7rem 1.25rem; margin: 1.75rem 0 0; font-weight: 700; }
+.resume-hero { padding-bottom: 3.5rem; }
+.resume-title { margin-bottom: .45rem; color: var(--accent); font-size: clamp(1.15rem, 3vw, 1.45rem); font-weight: 750; }
+.resume-contact { color: var(--muted); font-size: .95rem; }
 
 dl { margin: 2rem 0 0; }
 dt { margin-bottom: .35rem; color: var(--ink); font-weight: 800; }

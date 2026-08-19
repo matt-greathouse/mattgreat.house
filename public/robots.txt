@@ -1,0 +1,5 @@
+# This public site welcomes search and AI crawlers.
+User-agent: *
+Allow: /
+
+Sitemap: https://mattgreat.house/sitemap.xml
