@@ -134,9 +134,9 @@ function App() {
         <section className="hero page-shell" id="top" aria-labelledby="hero-title">
           <div className="hero-identity">
             <img className="hero-headshot" src="/matt-greathouse-headshot.jpg" width="72" height="72" alt="Matt Greathouse" />
-            <p className="kicker">Matt Greathouse · Founding senior software engineer</p>
+            <p className="kicker">Matt Greathouse · Senior software engineer</p>
           </div>
-          <h1 id="hero-title">Founding engineer building AI-enabled products that ship and last.</h1>
+          <h1 id="hero-title">Senior engineer building AI-enabled products that ship and last.</h1>
           <p className="hero-copy">I build and operate AI agent platforms and full-stack products from early-stage ideas through paying customers, with hands-on ownership of the systems that keep them reliable.</p>
           <div className="hero-actions">
             <a className="button button-primary" href="#experience">View experience <span aria-hidden="true">↓</span></a>
@@ -149,7 +149,7 @@ function App() {
           <SectionHeading number="01" title="Professional overview" />
           <div className="section-content">
             <p className="section-lede" id="overview-title">A product-minded engineer who can own the work from an early concept through a dependable release.</p>
-            <p className="section-copy">At Gobii, I&apos;ve helped take an AI agent platform from early-stage to paying customers. As a second hire and founding engineer, I work across product development, reliability, customer support, and the systems behind the product.</p>
+            <p className="section-copy">At Gobii, I&apos;ve helped take an AI agent platform from early-stage to paying customers. As the second hire and founding engineer, I work across product development, reliability, customer support, and the systems behind the product.</p>
             <ul className="strength-list" aria-label="Core strengths">
               <li><strong>Full-stack delivery</strong><span>Own product features, infrastructure, billing, observability, and operational reliability.</span></li>
               <li><strong>AI agent systems</strong><span>Ship LLM orchestration, tool calling, MCP, browser automation, and evaluation workflows.</span></li>
