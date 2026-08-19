@@ -141,6 +141,8 @@ nav a:hover::after, nav a:focus-visible::after { transform: scaleX(1); }
 
 .hero { max-width: 1160px; padding: clamp(5.5rem, 11vw, 9rem) 0 clamp(5rem, 10vw, 8rem); }
 .kicker, .section-heading > p { margin: 0; color: var(--accent); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .71rem; font-weight: 800; letter-spacing: .11em; line-height: 1.4; text-transform: uppercase; }
+.hero-identity { display: flex; align-items: center; gap: .85rem; }
+.hero-headshot { width: 72px; height: 72px; border: 1px solid var(--rule); border-radius: 50%; object-fit: cover; box-shadow: 0 10px 24px color-mix(in srgb, var(--ink) 12%, transparent); }
 h1, h2, h3, p { margin-top: 0; }
 h1, h2, .section-lede { font-family: var(--display); font-weight: 500; }
 h1 { max-width: 970px; margin: 1rem 0 1.6rem; font-size: clamp(3.1rem, 7.1vw, 6.85rem); letter-spacing: -.055em; line-height: .98; text-wrap: balance; }

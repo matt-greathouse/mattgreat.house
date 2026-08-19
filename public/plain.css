@@ -41,6 +41,9 @@ main { padding-bottom: 3rem; }
 section { padding: 3.5rem 0; border-bottom: 1px solid var(--line); scroll-margin-top: 1rem; }
 .hero { padding-top: 5.5rem; }
 .eyebrow, .date { margin: 0 0 .7rem; color: var(--accent); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .78rem; font-weight: 800; letter-spacing: .05em; line-height: 1.4; text-transform: uppercase; }
+.hero-identity { display: flex; align-items: center; gap: .85rem; margin-bottom: 1rem; }
+.hero-identity .eyebrow { margin: 0; }
+.hero-headshot { width: 72px; height: 72px; border: 1px solid var(--line); border-radius: 50%; object-fit: cover; box-shadow: 0 10px 24px color-mix(in srgb, var(--ink) 12%, transparent); }
 h1, h2, h3, p { margin-top: 0; }
 h1, h2 { max-width: 22ch; font-family: Georgia, "Times New Roman", serif; font-weight: 600; line-height: 1.12; text-wrap: balance; }
 h1 { margin-bottom: 1.2rem; font-size: clamp(2.5rem, 8vw, 4.4rem); letter-spacing: -.04em; }
