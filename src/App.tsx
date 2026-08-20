@@ -1,16 +1,5 @@
-import { useEffect, useState } from 'react'
-
 const githubUrl = 'https://github.com/matt-greathouse'
 const linkedInUrl = 'https://www.linkedin.com/in/matt-greathouse-977aa6110/'
-const themeStorageKey = 'mattgreat.house-theme'
-
-type Theme = 'light' | 'dark'
-
-function getInitialTheme(): { theme: Theme; isManual: boolean } {
-  // The first render must be identical during prerendering and hydration.
-  // Browser preferences are restored after React has hydrated this markup.
-  return { theme: 'light', isManual: false }
-}
 
 function ArrowUpRight() {
   return (
@@ -20,7 +9,7 @@ function ArrowUpRight() {
   )
 }
 
-function ThemeIcon({ theme }: { theme: Theme }) {
+function ThemeIcon({ theme }: { theme: 'light' | 'dark' }) {
   return theme === 'dark' ? (
     <svg aria-hidden="true" className="theme-icon" viewBox="0 0 16 16">
       <path d="M12.8 10.3A5.4 5.4 0 0 1 5.7 3.2 5.4 5.4 0 1 0 12.8 10.3Z" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.45" />
@@ -47,52 +36,21 @@ function SectionHeading({ number, title }: { number: string; title: string }) {
 }
 
 export default function App() {
-  const [themePreference, setThemePreference] = useState(getInitialTheme)
-  const theme = themePreference.theme
-  const nextTheme = theme === 'dark' ? 'light' : 'dark'
-
-  useEffect(() => {
-    document.documentElement.dataset.theme = theme
-  }, [theme])
-
-  useEffect(() => {
-    if (themePreference.isManual) return
-
-    const savedTheme = window.localStorage.getItem(themeStorageKey)
-    if (savedTheme === 'light' || savedTheme === 'dark') {
-      setThemePreference({ theme: savedTheme, isManual: true })
-      return
-    }
-
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
-    const syncWithSystemTheme = (event: MediaQueryListEvent) => {
-      setThemePreference({ theme: event.matches ? 'dark' : 'light', isManual: false })
-    }
-
-    setThemePreference({ theme: mediaQuery.matches ? 'dark' : 'light', isManual: false })
-    mediaQuery.addEventListener('change', syncWithSystemTheme)
-    return () => mediaQuery.removeEventListener('change', syncWithSystemTheme)
-  }, [themePreference.isManual])
-
-  function toggleTheme() {
-    setThemePreference({ theme: nextTheme, isManual: true })
-    window.localStorage.setItem(themeStorageKey, nextTheme)
-  }
-
   return (
     <>
       <a className="skip-link" href="#content">Skip to content</a>
 
       <header className="site-header">
         <div className="header-topline">
-          <a className="wordmark" href="#top" aria-label="Matt Greathouse, back to top">mattgreat.house</a>
+          <a className="wordmark" href="#top" aria-label="mattgreat.house — Matt Greathouse, back to top">mattgreat.house</a>
           <div className="header-actions">
             <ExternalLink href={githubUrl}>GitHub</ExternalLink>
             <a href="/resume/">Résumé</a>
             <a href="/plain.html">Plain version</a>
-            <button className="theme-toggle" type="button" aria-label={`Switch to ${nextTheme} mode`} aria-pressed={theme === 'dark'} onClick={toggleTheme}>
-              <ThemeIcon theme={theme} />
-              <span>{theme === 'dark' ? 'Dark' : 'Light'}</span>
+            <button className="theme-toggle" type="button" data-theme-toggle aria-label="Light mode. Switch to dark mode" aria-pressed="false">
+              <span className="theme-icon-variant theme-icon-light"><ThemeIcon theme="light" /></span>
+              <span className="theme-icon-variant theme-icon-dark"><ThemeIcon theme="dark" /></span>
+              <span data-theme-label>Light</span>
             </button>
           </div>
         </div>
