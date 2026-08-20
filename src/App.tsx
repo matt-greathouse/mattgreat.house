@@ -130,7 +130,10 @@ export default function App() {
       <main id="content">
         <section className="hero page-shell" id="top" aria-labelledby="hero-title">
           <div className="hero-identity">
-            <img className="hero-headshot" src="/matt-greathouse-headshot.jpg" width="72" height="72" alt="Matt Greathouse" />
+            <picture>
+              <source srcSet="/matt-greathouse-headshot-144.webp" type="image/webp" />
+              <img className="hero-headshot" src="/matt-greathouse-headshot.jpg" width="72" height="72" alt="Matt Greathouse" fetchPriority="high" />
+            </picture>
             <p className="kicker">Matt Greathouse · Senior software engineer</p>
           </div>
           <h1 id="hero-title">Senior engineer building AI-enabled products that ship and last.</h1>
