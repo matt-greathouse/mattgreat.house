@@ -39,7 +39,7 @@ export default function BreakoutPrivacyPage() {
           </section>
           <section>
             <h2>Contact</h2>
-            <p>For privacy questions about Breakout Helper, email <a href="mailto:matt@mattgreat.house">matt@mattgreat.house</a>.</p>
+            <p>For privacy or support questions about Breakout Helper, email <a href="mailto:hello@mattgreat.house">hello@mattgreat.house</a>.</p>
           </section>
         </article>
 
