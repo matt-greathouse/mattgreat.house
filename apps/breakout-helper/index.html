@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <script>
+      try {
+        const savedTheme = localStorage.getItem('mattgreat.house-theme')
+        if (savedTheme === 'light' || savedTheme === 'dark') document.documentElement.dataset.theme = savedTheme
+      } catch {}
+    </script>
+    <meta name="description" content="Breakout Helper is an upcoming iPhone and iPad app for creating thoughtful classroom groups in a tap." />
+    <link rel="canonical" href="https://mattgreat.house/apps/breakout-helper/" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="mattgreat.house" />
+    <meta property="og:title" content="Breakout Helper — Thoughtful groups, in a tap" />
+    <meta property="og:description" content="An upcoming iPhone and iPad app for creating thoughtful classroom groups." />
+    <meta property="og:url" content="https://mattgreat.house/apps/breakout-helper/" />
+    <meta property="og:image" content="https://mattgreat.house/apps/breakout-helper/app-icon.png" />
+    <meta property="og:image:alt" content="Breakout Helper app icon" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Breakout Helper — Thoughtful groups, in a tap" />
+    <meta name="twitter:description" content="An upcoming iPhone and iPad app for creating thoughtful classroom groups." />
+    <meta name="twitter:image" content="https://mattgreat.house/apps/breakout-helper/app-icon.png" />
+    <link rel="preload" href="/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/source-serif-4-latin-500.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="/src/styles.css" />
+    <title>Breakout Helper — Thoughtful groups, in a tap</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script src="/theme-toggle.js" defer></script>
+    <script src="/navigation.js" defer></script>
+  </body>
+</html>
